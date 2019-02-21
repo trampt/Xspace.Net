@@ -28,12 +28,29 @@ namespace XSpace.Net.Business
             bool flag = channel.Exists(name);
             return flag;
         }
-
+        public bool Exists(int id,string name)
+        {
+            IDAL.IChannels channel = DBUtils.GetChannelHandler();
+            bool flag = channel.Exists(id,name);
+            return flag;
+        }
         public int Add(XSpace.Net.Model.Channels model)
         {
             IDAL.IChannels channel = DBUtils.GetChannelHandler();
             int ret = channel.Add(model);
             return ret; 
+        }
+        public Model.Channels GetModel(int id)
+        {
+            IDAL.IChannels channel = DBUtils.GetChannelHandler();
+           Model.Channels model = channel.GetModel(id);
+           return model;
+        }
+
+        public bool Update(XSpace.Net.Model.Channels model)
+        {
+            IDAL.IChannels channel = DBUtils.GetChannelHandler();
+            return channel.Update(model);
         }
     }
 }

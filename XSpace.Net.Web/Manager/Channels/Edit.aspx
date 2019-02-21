@@ -81,34 +81,38 @@
                     <div class="form-group">
                         <label for="channelcode">分类代码</label>
                         <input type="hidden" id="channelid" name="channelid"  />
-                        <input type="text" class="form-control required" maxlength="10" minlength="5" id="name" name="name" placeholder="code">
+                        <asp:TextBox runat="server" ID="txtName" CssClass="form-control required"  placeholder="code" maxlength="20" minlength="5"></asp:TextBox>
                         
 
                     </div>
                     <div class="form-group">
                         <label for="channeltitle">分类名称</label>
-                        <input type="text" class="form-control required" id="title" name="title" placeholder="title"  >
+                         <asp:TextBox runat="server" ID="txtTitle" CssClass="form-control required"  placeholder="title" maxlength="50" minlength="5"></asp:TextBox>
+                        
                         
                        
                     </div>
                     <div class="form-group">
                         <label for="channelsort">分类排序</label>
-                        <input type="text" class="form-control required number" id="sort_id" name="sort_id" placeholder="1"  >
-          
+
+                         <asp:TextBox runat="server" ID="txtSort" CssClass="form-control required number"  placeholder="1" ></asp:TextBox>
+                        
+                       
                     </div>
                     <div class="form-group">
                         <label for="channellock">是否关闭</label>
                         
                         <div class="switch">
-                            <input type="checkbox" id="channellock" name="channellock" data-on-color="primary" data-off-color="danger" />
+                            <asp:CheckBox runat="server" ID="chkLock" CssClass="" />
+                           
                         </div>
  
                          
                     </div>
-                    <asp:Button runat="server" CssClass="btn btn-default" ID="btnEdit" Text="添加" OnClick="btnEdit_Click" />
+                    <asp:Button runat="server" CssClass="btn btn-default" ID="btnAdd" Text="添加" OnClick="btnAdd_Click" />
                  
                 </div>
-                <div class="footer">
+                 <div class="footer">
                     <asp:Label runat="server" ID="lblHint" CssClass="label label-danger" ></asp:Label>
                 </div>
                 

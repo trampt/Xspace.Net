@@ -67,6 +67,19 @@ namespace XSpace.Net.SQLDAL
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+        public bool Exists(int id,string name)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from Channels");
+            strSql.Append(" where name=@name and id<>@id");
+            SqlParameter[] parameters = {
+					new SqlParameter("@name", SqlDbType.VarChar,50),
+                    new SqlParameter("@id", SqlDbType.Int)
+			};
+            parameters[0].Value = name;
+            parameters[1].Value = name;
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
 
 		/// <summary>
 		/// 增加一条数据
