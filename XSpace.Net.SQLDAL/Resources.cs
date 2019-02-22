@@ -54,6 +54,18 @@ namespace XSpace.Net.SQLDAL
 
 			return DbHelperSQL.Exists(strSql.ToString(),parameters);
 		}
+        public bool Exists(string title)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from Resources");
+            strSql.Append(" where title=@title");
+            SqlParameter[] parameters = {
+					new SqlParameter("@title", SqlDbType.NVarChar,100)
+			};
+            parameters[0].Value =title;
+
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
 
 
 		/// <summary>
@@ -63,9 +75,9 @@ namespace XSpace.Net.SQLDAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Resources(");
-			strSql.Append("channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_msg,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,video_src,sub_title,Price)");
+            strSql.Append("channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_lock,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,file_path,sub_title,Price)");
 			strSql.Append(" values (");
-			strSql.Append("@channel_id,@category_id,@call_index,@title,@link_url,@img_url,@seo_title,@seo_keywords,@seo_description,@tags,@zhaiyao,@content,@sort_id,@click,@status,@is_msg,@is_top,@is_red,@is_hot,@is_slide,@is_sys,@user_name,@like_count,@add_time,@update_time,@video_src,@sub_title,@Price)");
+            strSql.Append("@channel_id,@category_id,@call_index,@title,@link_url,@img_url,@seo_title,@seo_keywords,@seo_description,@tags,@zhaiyao,@content,@sort_id,@click,@status,@is_lock,@is_top,@is_red,@is_hot,@is_slide,@is_sys,@user_name,@like_count,@add_time,@update_time,@file_path,@sub_title,@Price)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@channel_id", SqlDbType.Int,4),
@@ -83,7 +95,7 @@ namespace XSpace.Net.SQLDAL
 					new SqlParameter("@sort_id", SqlDbType.Int,4),
 					new SqlParameter("@click", SqlDbType.Int,4),
 					new SqlParameter("@status", SqlDbType.Int,4),
-					new SqlParameter("@is_msg", SqlDbType.Int,4),
+					new SqlParameter("@is_lock", SqlDbType.Int,4),
 					new SqlParameter("@is_top", SqlDbType.Int,4),
 					new SqlParameter("@is_red", SqlDbType.Int,4),
 					new SqlParameter("@is_hot", SqlDbType.Int,4),
@@ -93,7 +105,7 @@ namespace XSpace.Net.SQLDAL
 					new SqlParameter("@like_count", SqlDbType.Int,4),
 					new SqlParameter("@add_time", SqlDbType.DateTime),
 					new SqlParameter("@update_time", SqlDbType.DateTime),
-					new SqlParameter("@video_src", SqlDbType.NVarChar,255),
+					new SqlParameter("@file_path", SqlDbType.NVarChar,255),
 					new SqlParameter("@sub_title", SqlDbType.NVarChar,255),
 					new SqlParameter("@Price", SqlDbType.Decimal,9)};
 			parameters[0].Value = model.channel_id;
@@ -111,7 +123,7 @@ namespace XSpace.Net.SQLDAL
 			parameters[12].Value = model.sort_id;
 			parameters[13].Value = model.click;
 			parameters[14].Value = model.status;
-			parameters[15].Value = model.is_msg;
+			parameters[15].Value = model.is_lock;
 			parameters[16].Value = model.is_top;
 			parameters[17].Value = model.is_red;
 			parameters[18].Value = model.is_hot;
@@ -121,7 +133,7 @@ namespace XSpace.Net.SQLDAL
 			parameters[22].Value = model.like_count;
 			parameters[23].Value = model.add_time;
 			parameters[24].Value = model.update_time;
-			parameters[25].Value = model.video_src;
+            parameters[25].Value = model.file_path;
 			parameters[26].Value = model.sub_title;
 			parameters[27].Value = model.Price;
 
@@ -157,7 +169,7 @@ namespace XSpace.Net.SQLDAL
 			strSql.Append("sort_id=@sort_id,");
 			strSql.Append("click=@click,");
 			strSql.Append("status=@status,");
-			strSql.Append("is_msg=@is_msg,");
+			strSql.Append("is_lock=@is_lock,");
 			strSql.Append("is_top=@is_top,");
 			strSql.Append("is_red=@is_red,");
 			strSql.Append("is_hot=@is_hot,");
@@ -167,7 +179,7 @@ namespace XSpace.Net.SQLDAL
 			strSql.Append("like_count=@like_count,");
 			strSql.Append("add_time=@add_time,");
 			strSql.Append("update_time=@update_time,");
-			strSql.Append("video_src=@video_src,");
+			strSql.Append("file_path=@file_path,");
 			strSql.Append("sub_title=@sub_title,");
 			strSql.Append("Price=@Price");
 			strSql.Append(" where id=@id");
@@ -187,7 +199,7 @@ namespace XSpace.Net.SQLDAL
 					new SqlParameter("@sort_id", SqlDbType.Int,4),
 					new SqlParameter("@click", SqlDbType.Int,4),
 					new SqlParameter("@status", SqlDbType.Int,4),
-					new SqlParameter("@is_msg", SqlDbType.Int,4),
+					new SqlParameter("@is_lock", SqlDbType.Int,4),
 					new SqlParameter("@is_top", SqlDbType.Int,4),
 					new SqlParameter("@is_red", SqlDbType.Int,4),
 					new SqlParameter("@is_hot", SqlDbType.Int,4),
@@ -197,7 +209,7 @@ namespace XSpace.Net.SQLDAL
 					new SqlParameter("@like_count", SqlDbType.Int,4),
 					new SqlParameter("@add_time", SqlDbType.DateTime),
 					new SqlParameter("@update_time", SqlDbType.DateTime),
-					new SqlParameter("@video_src", SqlDbType.NVarChar,255),
+					new SqlParameter("@file_path", SqlDbType.NVarChar,255),
 					new SqlParameter("@sub_title", SqlDbType.NVarChar,255),
 					new SqlParameter("@Price", SqlDbType.Decimal,9),
 					new SqlParameter("@id", SqlDbType.Int,4)};
@@ -216,7 +228,7 @@ namespace XSpace.Net.SQLDAL
 			parameters[12].Value = model.sort_id;
 			parameters[13].Value = model.click;
 			parameters[14].Value = model.status;
-			parameters[15].Value = model.is_msg;
+			parameters[15].Value = model.is_lock;
 			parameters[16].Value = model.is_top;
 			parameters[17].Value = model.is_red;
 			parameters[18].Value = model.is_hot;
@@ -226,7 +238,7 @@ namespace XSpace.Net.SQLDAL
 			parameters[22].Value = model.like_count;
 			parameters[23].Value = model.add_time;
 			parameters[24].Value = model.update_time;
-			parameters[25].Value = model.video_src;
+			parameters[25].Value = model.file_path;
 			parameters[26].Value = model.sub_title;
 			parameters[27].Value = model.Price;
 			parameters[28].Value = model.id;
@@ -293,7 +305,7 @@ namespace XSpace.Net.SQLDAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 id,channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_msg,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,video_src,sub_title,Price from Resources ");
+			strSql.Append("select  top 1 id,channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_lock,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,file_path,sub_title,Price from Resources ");
 			strSql.Append(" where id=@id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@id", SqlDbType.Int,4)
@@ -385,9 +397,9 @@ namespace XSpace.Net.SQLDAL
 				{
 					model.status=int.Parse(row["status"].ToString());
 				}
-				if(row["is_msg"]!=null && row["is_msg"].ToString()!="")
+				if(row["is_lock"]!=null && row["is_lock"].ToString()!="")
 				{
-					model.is_msg=int.Parse(row["is_msg"].ToString());
+					model.is_lock=int.Parse(row["is_lock"].ToString());
 				}
 				if(row["is_top"]!=null && row["is_top"].ToString()!="")
 				{
@@ -425,9 +437,9 @@ namespace XSpace.Net.SQLDAL
 				{
 					model.update_time=DateTime.Parse(row["update_time"].ToString());
 				}
-				if(row["video_src"]!=null)
+				if(row["file_path"]!=null)
 				{
-					model.video_src=row["video_src"].ToString();
+					model.file_path=row["file_path"].ToString();
 				}
 				if(row["sub_title"]!=null)
 				{
@@ -447,7 +459,7 @@ namespace XSpace.Net.SQLDAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select id,channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_msg,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,video_src,sub_title,Price ");
+			strSql.Append("select id,channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_lock,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,file_path,sub_title,Price ");
 			strSql.Append(" FROM Resources ");
 			if(strWhere.Trim()!="")
 			{
@@ -467,7 +479,7 @@ namespace XSpace.Net.SQLDAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" id,channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_msg,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,video_src,sub_title,Price ");
+			strSql.Append(" id,channel_id,category_id,call_index,title,link_url,img_url,seo_title,seo_keywords,seo_description,tags,zhaiyao,content,sort_id,click,status,is_lock,is_top,is_red,is_hot,is_slide,is_sys,user_name,like_count,add_time,update_time,file_path,sub_title,Price ");
 			strSql.Append(" FROM Resources ");
 			if(strWhere.Trim()!="")
 			{
@@ -553,6 +565,30 @@ namespace XSpace.Net.SQLDAL
 		#region  ExtensionMethod
 
 		#endregion  ExtensionMethod
+
+        public DataSet GetListByPage(int PageSize, int PageIndex,  out int pageCount,string strWhere, string orderBy)
+        {
+            string cmd = "XS_GetPagedList";
+            SqlParameter[] parms = new SqlParameter[6];
+            parms[0] = new SqlParameter("@pageIndex", SqlDbType.Int);
+            parms[0].Value = PageIndex;
+            parms[1] = new SqlParameter("@pageSize", SqlDbType.Int);
+            parms[1].Value = PageSize;
+            parms[2] = new SqlParameter("@tableName", SqlDbType.NVarChar, 50);
+            parms[2].Value = "Resources";
+            parms[3] = new SqlParameter("@strWhere", SqlDbType.NVarChar, 2000);
+            parms[3].Value = strWhere;
+            parms[4] = new SqlParameter("@orderBy", SqlDbType.NVarChar, 50);
+            parms[4].Value = orderBy;
+            parms[4] = new SqlParameter("@orderBy", SqlDbType.NVarChar, 50);
+            parms[4].Value = orderBy;
+            parms[5] = new SqlParameter("@pageCount", SqlDbType.Int);
+            parms[5].Direction = ParameterDirection.Output;
+            DataSet ds = DbHelperSQL.RunProcedure(cmd, parms, "dataset",out pageCount);
+
+           
+            return ds;
+        }
 	}
 }
 

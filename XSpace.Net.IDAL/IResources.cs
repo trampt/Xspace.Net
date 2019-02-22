@@ -32,6 +32,8 @@ namespace XSpace.Net.IDAL
 		/// 是否存在该记录
 		/// </summary>
 		bool Exists(int id);
+
+        bool Exists(string title);
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
@@ -68,5 +70,8 @@ namespace XSpace.Net.IDAL
 		#region  MethodEx
 
 		#endregion  MethodEx
+
+
+        DataSet GetListByPage(int PageSize, int PageIndex, out int pageCount, string strWhere = "1=1", string orderBy = "id");
 	} 
 }

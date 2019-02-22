@@ -77,7 +77,7 @@ namespace XSpace.Net.SQLDAL
                     new SqlParameter("@id", SqlDbType.Int)
 			};
             parameters[0].Value = name;
-            parameters[1].Value = name;
+            parameters[1].Value = id;
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
 
@@ -424,6 +424,8 @@ namespace XSpace.Net.SQLDAL
 		#region  ExtensionMethod
 
 		#endregion  ExtensionMethod
+
+      
 	}
 }
 

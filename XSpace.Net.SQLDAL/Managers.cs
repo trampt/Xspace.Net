@@ -68,6 +68,31 @@ namespace XSpace.Net.SQLDAL
             parameters[1].Value = password;
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+        public bool Exists(string name, int id)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from Managers");
+            strSql.Append(" where user_name=@user_name and id<>@id");
+            SqlParameter[] parameters = {
+					new SqlParameter("@user_name", SqlDbType.NVarChar,100),
+                    new SqlParameter("@id", SqlDbType.Int)
+			};
+            parameters[0].Value = name;
+            parameters[1].Value = id;
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
+        public bool Exists(string name)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from Managers");
+            strSql.Append(" where user_name=@user_name");
+            SqlParameter[] parameters = {
+					new SqlParameter("@user_name", SqlDbType.NVarChar,100)
+                   
+			};
+            parameters[0].Value = name;
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>

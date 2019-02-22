@@ -28,5 +28,10 @@ namespace XSpace.Net.Business
             Assembly assembly = Assembly.Load(assemblypath);
             return assembly.CreateInstance(assemblypath + ".Channels") as IChannels;
         }
+        public static IDAL.IResources GetResourceHandler()
+        {
+            Assembly assembly = Assembly.Load(assemblypath);
+            return assembly.CreateInstance(assemblypath + ".Resources") as IResources;
+        }
     }
 }

@@ -22,6 +22,15 @@ namespace XSpace.Net.Web.Manager.Channels {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// header 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::XSpace.Net.Web.Manager.header header;
+        
+        /// <summary>
         /// txtName 控件。
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace XSpace.Net.Web.Manager.Channels {
         protected global::System.Web.UI.WebControls.CheckBox chkLock;
         
         /// <summary>
-        /// btnAdd 控件。
+        /// btnEdit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
         
         /// <summary>
         /// lblHint 控件。

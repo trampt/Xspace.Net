@@ -12,7 +12,7 @@
     <link href="../Contents/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server"  class="login-form">
+    <form id="form_login" runat="server"  class="login-form">
     <div>
     <div class="container">
             <div class="row">

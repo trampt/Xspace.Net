@@ -42,7 +42,7 @@ namespace XSpace.Net.Model
 		private int _sort_id;
 		private int _click;
 		private int _status;
-		private int _is_msg;
+        private int _is_lock;
 		private int _is_top;
 		private int _is_red;
 		private int _is_hot;
@@ -52,9 +52,16 @@ namespace XSpace.Net.Model
 		private int _like_count;
 		private DateTime _add_time;
 		private DateTime? _update_time;
-		private string _video_src;
+        private string _file_path;
 		private string _sub_title;
 		private decimal? _price=0M;
+
+        private string _channel_title;
+        public string channel_title
+        {
+            get { return _channel_title; }
+            set { _channel_title = value; }
+        }
 		/// <summary>
 		/// 
 		/// </summary>
@@ -186,10 +193,10 @@ namespace XSpace.Net.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public int is_msg
+        public int is_lock
 		{
-			set{ _is_msg=value;}
-			get{return _is_msg;}
+            set { _is_lock = value; }
+            get { return _is_lock; }
 		}
 		/// <summary>
 		/// 
@@ -266,10 +273,10 @@ namespace XSpace.Net.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string video_src
+        public string file_path
 		{
-			set{ _video_src=value;}
-			get{return _video_src;}
+            set { _file_path = value; }
+            get { return _file_path; }
 		}
 		/// <summary>
 		/// 

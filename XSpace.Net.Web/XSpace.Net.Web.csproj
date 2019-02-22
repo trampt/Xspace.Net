@@ -121,6 +121,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contents\umeditor\net\Uploader.cs" />
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,6 +150,13 @@
     <Compile Include="Manager\Channels\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\header.ascx.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\header.ascx.designer.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,10 +171,54 @@
     <Compile Include="Manager\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Managers\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Managers\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Managers\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Managers\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Managers\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Managers\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Resources\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Resources\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Resources\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Resources\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Resources\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Resources\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contents\Images\" />
+    <Folder Include="Manager\Users\" />
+    <Folder Include="upfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Contents\Assets\css\base-admin-responsive.css" />
@@ -229,12 +281,188 @@
     <Content Include="Contents\fontawesome\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Contents\fontawesome\HELP-US-OUT.txt" />
     <Content Include="Contents\Scripts\Manager.js" />
+    <Content Include="Contents\summernote\lang\summernote-ar-AR.js" />
+    <Content Include="Contents\summernote\lang\summernote-ar-AR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-bg-BG.js" />
+    <Content Include="Contents\summernote\lang\summernote-bg-BG.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-ca-ES.js" />
+    <Content Include="Contents\summernote\lang\summernote-ca-ES.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-cs-CZ.js" />
+    <Content Include="Contents\summernote\lang\summernote-cs-CZ.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-da-DK.js" />
+    <Content Include="Contents\summernote\lang\summernote-da-DK.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-de-DE.js" />
+    <Content Include="Contents\summernote\lang\summernote-de-DE.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-el-GR.js" />
+    <Content Include="Contents\summernote\lang\summernote-el-GR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-es-ES.js" />
+    <Content Include="Contents\summernote\lang\summernote-es-ES.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-es-EU.js" />
+    <Content Include="Contents\summernote\lang\summernote-es-EU.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-fa-IR.js" />
+    <Content Include="Contents\summernote\lang\summernote-fa-IR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-fi-FI.js" />
+    <Content Include="Contents\summernote\lang\summernote-fi-FI.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-fr-FR.js" />
+    <Content Include="Contents\summernote\lang\summernote-fr-FR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-gl-ES.js" />
+    <Content Include="Contents\summernote\lang\summernote-gl-ES.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-he-IL.js" />
+    <Content Include="Contents\summernote\lang\summernote-he-IL.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-hr-HR.js" />
+    <Content Include="Contents\summernote\lang\summernote-hr-HR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-hu-HU.js" />
+    <Content Include="Contents\summernote\lang\summernote-hu-HU.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-id-ID.js" />
+    <Content Include="Contents\summernote\lang\summernote-id-ID.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-it-IT.js" />
+    <Content Include="Contents\summernote\lang\summernote-it-IT.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-ja-JP.js" />
+    <Content Include="Contents\summernote\lang\summernote-ja-JP.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-ko-KR.js" />
+    <Content Include="Contents\summernote\lang\summernote-ko-KR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-lt-LT.js" />
+    <Content Include="Contents\summernote\lang\summernote-lt-LT.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-lt-LV.js" />
+    <Content Include="Contents\summernote\lang\summernote-lt-LV.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-mn-MN.js" />
+    <Content Include="Contents\summernote\lang\summernote-mn-MN.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-nb-NO.js" />
+    <Content Include="Contents\summernote\lang\summernote-nb-NO.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-nl-NL.js" />
+    <Content Include="Contents\summernote\lang\summernote-nl-NL.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-pl-PL.js" />
+    <Content Include="Contents\summernote\lang\summernote-pl-PL.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-pt-BR.js" />
+    <Content Include="Contents\summernote\lang\summernote-pt-BR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-pt-PT.js" />
+    <Content Include="Contents\summernote\lang\summernote-pt-PT.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-ro-RO.js" />
+    <Content Include="Contents\summernote\lang\summernote-ro-RO.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-ru-RU.js" />
+    <Content Include="Contents\summernote\lang\summernote-ru-RU.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-sk-SK.js" />
+    <Content Include="Contents\summernote\lang\summernote-sk-SK.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-sl-SI.js" />
+    <Content Include="Contents\summernote\lang\summernote-sl-SI.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="Contents\summernote\lang\summernote-sr-RS-Latin.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-sr-RS.js" />
+    <Content Include="Contents\summernote\lang\summernote-sr-RS.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-sv-SE.js" />
+    <Content Include="Contents\summernote\lang\summernote-sv-SE.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-ta-IN.js" />
+    <Content Include="Contents\summernote\lang\summernote-ta-IN.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-th-TH.js" />
+    <Content Include="Contents\summernote\lang\summernote-th-TH.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-tr-TR.js" />
+    <Content Include="Contents\summernote\lang\summernote-tr-TR.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-uk-UA.js" />
+    <Content Include="Contents\summernote\lang\summernote-uk-UA.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-vi-VN.js" />
+    <Content Include="Contents\summernote\lang\summernote-vi-VN.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-zh-CN.js" />
+    <Content Include="Contents\summernote\lang\summernote-zh-CN.min.js" />
+    <Content Include="Contents\summernote\lang\summernote-zh-TW.js" />
+    <Content Include="Contents\summernote\lang\summernote-zh-TW.min.js" />
+    <Content Include="Contents\summernote\summernote-bs4.css" />
+    <Content Include="Contents\summernote\summernote-bs4.js" />
+    <Content Include="Contents\summernote\summernote-bs4.min.js" />
+    <Content Include="Contents\summernote\summernote-lite.css" />
+    <Content Include="Contents\summernote\summernote-lite.js" />
+    <Content Include="Contents\summernote\summernote.css" />
+    <Content Include="Contents\summernote\summernote.js" />
+    <Content Include="Contents\summernote\summernote.min.js" />
+    <Content Include="Contents\umeditor\dialogs\emotion\emotion.css" />
+    <Content Include="Contents\umeditor\dialogs\emotion\emotion.js" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\0.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="Contents\umeditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="Contents\umeditor\dialogs\formula\formula.css" />
+    <Content Include="Contents\umeditor\dialogs\formula\formula.html" />
+    <Content Include="Contents\umeditor\dialogs\formula\formula.js" />
+    <Content Include="Contents\umeditor\dialogs\formula\images\formula.png" />
+    <Content Include="Contents\umeditor\dialogs\image\image.css" />
+    <Content Include="Contents\umeditor\dialogs\image\image.js" />
+    <Content Include="Contents\umeditor\dialogs\image\images\close.png" />
+    <Content Include="Contents\umeditor\dialogs\image\images\upload1.png" />
+    <Content Include="Contents\umeditor\dialogs\image\images\upload2.png" />
+    <Content Include="Contents\umeditor\dialogs\link\link.js" />
+    <Content Include="Contents\umeditor\dialogs\map\map.html" />
+    <Content Include="Contents\umeditor\dialogs\map\map.js" />
+    <Content Include="Contents\umeditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="Contents\umeditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="Contents\umeditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="Contents\umeditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="Contents\umeditor\dialogs\video\video.css" />
+    <Content Include="Contents\umeditor\dialogs\video\video.js" />
+    <Content Include="Contents\umeditor\index.html" />
+    <Content Include="Contents\umeditor\lang\en\en.js" />
+    <Content Include="Contents\umeditor\lang\en\images\addimage.png" />
+    <Content Include="Contents\umeditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Contents\umeditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Contents\umeditor\lang\en\images\background.png" />
+    <Content Include="Contents\umeditor\lang\en\images\button.png" />
+    <Content Include="Contents\umeditor\lang\en\images\copy.png" />
+    <Content Include="Contents\umeditor\lang\en\images\deletedisable.png" />
+    <Content Include="Contents\umeditor\lang\en\images\deleteenable.png" />
+    <Content Include="Contents\umeditor\lang\en\images\imglabel.png" />
+    <Content Include="Contents\umeditor\lang\en\images\listbackground.png" />
+    <Content Include="Contents\umeditor\lang\en\images\localimage.png" />
+    <Content Include="Contents\umeditor\lang\en\images\music.png" />
+    <Content Include="Contents\umeditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Contents\umeditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="Contents\umeditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Contents\umeditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="Contents\umeditor\lang\en\images\upload.png" />
+    <Content Include="Contents\umeditor\lang\zh-cn\images\copy.png" />
+    <Content Include="Contents\umeditor\lang\zh-cn\images\imglabel.png" />
+    <Content Include="Contents\umeditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="Contents\umeditor\lang\zh-cn\images\music.png" />
+    <Content Include="Contents\umeditor\lang\zh-cn\images\upload.png" />
+    <Content Include="Contents\umeditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="Contents\umeditor\themes\default\css\umeditor.css" />
+    <Content Include="Contents\umeditor\themes\default\css\umeditor.min.css" />
+    <Content Include="Contents\umeditor\themes\default\images\caret.png" />
+    <Content Include="Contents\umeditor\themes\default\images\close.png" />
+    <Content Include="Contents\umeditor\themes\default\images\icons.gif" />
+    <Content Include="Contents\umeditor\themes\default\images\icons.png" />
+    <Content Include="Contents\umeditor\themes\default\images\ok.gif" />
+    <Content Include="Contents\umeditor\themes\default\images\pop-bg.png" />
+    <Content Include="Contents\umeditor\themes\default\images\spacer.gif" />
+    <Content Include="Contents\umeditor\themes\default\images\videologo.gif" />
+    <Content Include="Contents\umeditor\third-party\jquery.min.js" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\STIXFontLicense2010.txt" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.svg" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.svg" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.svg" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.svg" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\Symbola.svg" />
+    <Content Include="Contents\umeditor\third-party\mathquill\mathquill.css" />
+    <Content Include="Contents\umeditor\third-party\mathquill\mathquill.js" />
+    <Content Include="Contents\umeditor\third-party\mathquill\mathquill.min.js" />
+    <Content Include="Contents\umeditor\umeditor.config.js" />
+    <Content Include="Contents\umeditor\umeditor.js" />
+    <Content Include="Contents\umeditor\umeditor.min.js" />
     <Content Include="Index.aspx" />
     <Content Include="Manager\Channels\Edit.aspx" />
     <Content Include="Manager\Channels\Add.aspx" />
     <Content Include="Manager\Channels\List.aspx" />
+    <Content Include="Manager\header.ascx" />
     <Content Include="Manager\Index.aspx" />
     <Content Include="Manager\Login.aspx" />
+    <Content Include="Manager\Managers\Add.aspx" />
+    <Content Include="Manager\Managers\Edit.aspx" />
+    <Content Include="Manager\Managers\List.aspx" />
+    <Content Include="Manager\Resources\Add.aspx" />
+    <Content Include="Manager\Resources\Edit.aspx" />
+    <Content Include="Manager\Resources\List.aspx" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="packages.config" />
@@ -253,6 +481,30 @@
     <Content Include="Contents\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Contents\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Contents\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Contents\umeditor\net\getContent.ashx" />
+    <Content Include="Contents\umeditor\net\imageUp.ashx" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.eot" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.ttf" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.woff" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.eot" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.ttf" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.woff" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.eot" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.ttf" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.woff" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.eot" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.ttf" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.woff" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\Symbola.eot" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\Symbola.otf" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\Symbola.ttf" />
+    <Content Include="Contents\umeditor\third-party\mathquill\font\Symbola.woff" />
+    <Content Include="Contents\summernote\font\summernote.eot" />
+    <Content Include="Contents\summernote\font\summernote.ttf" />
+    <Content Include="Contents\summernote\font\summernote.woff" />
+    <Content Include="Contents\summernote\summernote-bs4.js.map" />
+    <Content Include="Contents\summernote\summernote-lite.js.map" />
+    <Content Include="Contents\summernote\summernote.js.map" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>

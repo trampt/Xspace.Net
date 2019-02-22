@@ -946,6 +946,21 @@ namespace XSpace.Net.Utils
                 return dataSet;
             }
         }
+
+        public static DataSet RunProcedure(string storedProcName, IDataParameter[] parameters, string tableName,out int ReturnValue)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                DataSet dataSet = new DataSet();
+                connection.Open();
+                SqlDataAdapter sqlDA = new SqlDataAdapter();
+                sqlDA.SelectCommand = BuildQueryCommand(connection, storedProcName, parameters);
+                sqlDA.Fill(dataSet, tableName);
+                connection.Close();
+                ReturnValue =Convert.ToInt32( sqlDA.SelectCommand.Parameters[sqlDA.SelectCommand.Parameters.Count - 1].Value);
+                return dataSet;
+            }
+        }
         public static DataSet RunProcedure(string storedProcName, IDataParameter[] parameters, string tableName, int Times)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

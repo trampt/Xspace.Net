@@ -1,7 +1,7 @@
 ﻿/*login page*/
 $(document).ready(function () {
     
-    $("#form1").validate({
+    $("#form_login").validate({
         rules: {
             txtUserName: "required",
             txtPassword: { required: true, minlength: 8 }
