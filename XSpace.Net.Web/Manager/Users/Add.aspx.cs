@@ -24,6 +24,7 @@ namespace XSpace.Net.Web.Manager.Users
             model.email = txtEmail.Text;
             int islock = chkLock.Checked ? 1 : 0;
             model.status = islock;
+            model.mobile = txtPhone.Text;
             if (!string.IsNullOrEmpty(name))
             {
                 if (!bll.Exists(name))
@@ -34,7 +35,7 @@ namespace XSpace.Net.Web.Manager.Users
                 }
                 else
                 {
-                    lblHint.Text = "该用户[" + name + "]代码已存在，请更换.";
+                    lblHint.Text = "该用户[" + name + "]已存在，请更换.";
                 }
             }
             else {

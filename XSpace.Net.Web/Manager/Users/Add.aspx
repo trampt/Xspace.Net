@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label for="txtPassword">密码</label>
-                         <asp:TextBox runat="server"  TextMode="Password" ID="txtPassword" CssClass="form-control required"  placeholder="password" maxlength="20" minlength="8"></asp:TextBox>
+                         <asp:TextBox runat="server"  TextMode="Password" ID="txtPassword" CssClass="form-control required"  placeholder="password" maxlength="20" minlength="6"></asp:TextBox>
                         
                         
                        
@@ -57,7 +57,7 @@
 
                      <div class="form-group">
                         <label for="txtConPassword">确认密码</label>
-                         <asp:TextBox runat="server" TextMode="Password" ID="txtConPassword" CssClass="form-control required"  equalTo='#txtPassword'  placeholder="confirm password" maxlength="20" minlength="8"></asp:TextBox>
+                         <asp:TextBox runat="server" TextMode="Password" ID="txtConPassword" CssClass="form-control required"  equalTo='#txtPassword'  placeholder="confirm password" maxlength="20" minlength="6"></asp:TextBox>
                         
                         
                        
@@ -65,7 +65,11 @@
 
                     <div class="form-group">
                         <label for="txtEmail">Email</label>
-                         <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control required"  placeholder="email" maxlength="50"></asp:TextBox>
+                         <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control required email"  placeholder="email" maxlength="50"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">电话</label>
+                         <asp:TextBox runat="server" ID="txtPhone" CssClass="form-control required phone"  placeholder="phone" maxlength="50"></asp:TextBox>
                     </div>
 
 
