@@ -213,11 +213,31 @@
     <Compile Include="Manager\Resources\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Users\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Users\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Users\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Users\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Users\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Users\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contents\Images\" />
-    <Folder Include="Manager\Users\" />
     <Folder Include="upfiles\" />
   </ItemGroup>
   <ItemGroup>
@@ -463,6 +483,9 @@
     <Content Include="Manager\Resources\Add.aspx" />
     <Content Include="Manager\Resources\Edit.aspx" />
     <Content Include="Manager\Resources\List.aspx" />
+    <Content Include="Manager\Users\Add.aspx" />
+    <Content Include="Manager\Users\Edit.aspx" />
+    <Content Include="Manager\Users\List.aspx" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="packages.config" />

@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace XSpace.Net.Web.Manager.Managers {
+namespace XSpace.Net.Web.Manager.Users {
     
     
     public partial class List {

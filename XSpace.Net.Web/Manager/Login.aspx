@@ -8,7 +8,7 @@
     <title></title>
     <link href="../Contents/bootstrap/css/bootstrap.css" rel="stylesheet" />
  
-    <link href="../Contents/Css/Login.css" rel="stylesheet" />
+    <link href="../Contents/Css/ManagerLogin.css" rel="stylesheet" />
     <link href="../Contents/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>

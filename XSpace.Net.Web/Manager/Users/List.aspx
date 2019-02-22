@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="XSpace.Net.Web.Manager.Managers.List" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="XSpace.Net.Web.Manager.Users.List" %>
 
 <%@ Register Src="~/Manager/header.ascx" TagPrefix="uc1" TagName="header" %>
 
@@ -47,8 +47,10 @@
                         <tr>
                             <th> ID </th>
                             <th> 名称 </th>
+                            <th> 昵称 </th>
                             <th> 邮件 </th>
-                            
+                            <th> 电话 </th>
+                            <th class="hidden-xs hidden-sm"> 注册时间 </th>
                             <th class="hidden-xs hidden-sm"> 状态</th>
                             <th class="td-actions visible-xs"> &nbsp; </th>
                         </tr>
@@ -59,9 +61,13 @@
                                 <tr>
                                     <td><%#Eval("id") %></td>
                                     <td> <%#Eval("user_name") %> </td>
-                                    <td> <%#Eval("email") %> </td>
+                                     <td> <%#Eval("nick_name") %> </td>
+                                     <td> <%#Eval("email") %> </td>
+                                     <td> <%#Eval("mobile") %> </td>
+                                     <td class="hidden-xs hidden-sm"> <%#Eval("reg_time") %> </td>
+                                     
                                     
-                                    <td class="hidden-xs hidden-sm"> <%#Eval("is_lock")!=null&&Eval("is_lock").ToString()=="1"?"不可用":"可用" %> </td>
+                                    <td class="hidden-xs hidden-sm"> <%#Eval("status")!=null&&Eval("status").ToString()=="1"?"不可用":"可用" %> </td>
                                     <td class="td-actions"><a href="Edit.aspx?Id=<%#Eval("id") %>" class="btn btn-small btn-success"><i class="btn-icon-only icon-edit-sign"> </i></a>
                                         <asp:LinkButton  runat="server" ID="lblDelete" data-del="true" CommandName="delete" CommandArgument='<%#Eval("id")%>'  Text="<i class='btn-icon-only icon-remove'> </i>" CssClass="btn btn-danger btn-small"></asp:LinkButton>
                                        </td>

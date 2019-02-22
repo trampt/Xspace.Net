@@ -32,6 +32,9 @@ namespace XSpace.Net.IDAL
 		/// 是否存在该记录
 		/// </summary>
 		bool Exists(int id);
+
+        bool Exists(string name);
+        bool Exists(string username, int id);
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
