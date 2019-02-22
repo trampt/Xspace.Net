@@ -50,9 +50,9 @@ namespace XSpace.Net.Business
             return model;
         }
 
-        public bool Update(XSpace.Net.Model.Managers model)
+        public bool Update(XSpace.Net.Model.Users model)
         {
-            IDAL.IManagers channel = DBUtils.GetManagerHandler();
+            IDAL.IUsers channel = DBUtils.GetUserHandler();
             return channel.Update(model);
         }
 

@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="XSpace.Net.Web.Manager.Users.Edit" %>
 
+<%@ Register Src="~/Manager/header.ascx" TagPrefix="uc1" TagName="header" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,49 +27,9 @@
 <body>
      
        <form runat="server" id="form1">
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-           
-            <a class="navbar-brand" href="#">云享资源后台</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-            <!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-            <!-- /container -->
  
-        <!-- /navbar-inner -->
- 
-    <!-- /navbar -->
-    <div class="subnavbar">
-        <div class="subnavbar-inner">
-            <div class="container">
-                <ul class="mainnav">
-                    <li class="active"><a href="/Manager/Index.aspx"><i class="icon-dashboard"></i><span>控制中心</span> </a> </li>
-                    <li><a href="/Admin/System/Index.aspx"><i class="icon-list-alt"></i><span>系统管理</span> </a> </li>
-                    <li><a href="/Admin/Users/Index.aspx"><i class="icon-facetime-video"></i><span>用户管理</span> </a></li>
-                    <li class="dropdown">
-                        <a href="/Admin/Channel/Index.aspx" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-apple"></i><span>资讯管理</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/Admin/Channel/Index.aspx">资讯分类</a></li>
-                            <li><a href="/Admin/Resources/Index.aspx">资讯管理</a></li>
 
-                        </ul>
-                    </li>
-                    <li><a href="/Admin/Orders/Index.aspx"><i class="icon-android"></i><span>用户订单</span> </a></li>
-
-                    <li><a href="/Admin/Settings/Index.aspx"><i class="icon-code"></i><span>设置</span> </a> </li>
-                </ul>
-            </div>
-            <!-- /container -->
-        </div>
-        <!-- /subnavbar-inner -->
-    </div>
-
-  
+           <uc1:header runat="server" ID="header" />
 
     
 
@@ -79,7 +42,7 @@
             
                 <div class="panel-body">
                     <div class="form-group">
-                        <label for="channelcode">管理员名称</label>
+                        <label for="channelcode">名称</label>
                         <input type="hidden" id="channelid" name="channelid"  />
                         <asp:TextBox runat="server" ID="txtName" CssClass="form-control required"  placeholder="username" maxlength="20" minlength="5"></asp:TextBox>
                         
@@ -87,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="txtPassword">密码</label>
-                         <asp:TextBox runat="server"  TextMode="Password" ID="txtPassword" CssClass="form-control"    placeholder="不修改请留空"></asp:TextBox>
+                         <asp:TextBox runat="server"  TextMode="Password" ID="txtPassword" CssClass="form-control"  placeholder="不修改请留空" maxlength="20" minlength="6"></asp:TextBox>
                         
                         
                        
@@ -95,7 +58,7 @@
 
                      <div class="form-group">
                         <label for="txtConPassword">确认密码</label>
-                         <asp:TextBox runat="server" TextMode="Password" ID="txtConPassword" CssClass="form-control" placeholder="不修改请留空"></asp:TextBox>
+                         <asp:TextBox runat="server" TextMode="Password" ID="txtConPassword" CssClass="form-control"  equalTo='#txtPassword'  placeholder="不修改请留空" maxlength="20" minlength="6"></asp:TextBox>
                         
                         
                        
@@ -103,7 +66,11 @@
 
                     <div class="form-group">
                         <label for="txtEmail">Email</label>
-                         <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control required"  placeholder="email" maxlength="50"></asp:TextBox>
+                         <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control required email"  placeholder="email" maxlength="50"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">电话</label>
+                         <asp:TextBox runat="server" ID="txtPhone" CssClass="form-control required phone"  placeholder="phone" maxlength="50"></asp:TextBox>
                     </div>
 
 
@@ -117,7 +84,7 @@
  
                          
                     </div>
-                    <asp:Button runat="server" CssClass="btn btn-default" ID="btnAdd" Text="编辑" OnClick="btnEdit_Click" />
+                    <asp:Button runat="server" CssClass="btn btn-default" ID="btnEdit" Text="编辑" OnClick="btnEdit_Click" />
                  
                 </div>
 

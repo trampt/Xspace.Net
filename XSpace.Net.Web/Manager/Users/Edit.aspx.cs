@@ -30,21 +30,22 @@ namespace XSpace.Net.Web.Manager.Users
         }
         protected void InitData(int id)
         {
-            XSpace.Net.Business.Managers bll = new Business.Managers();
-            Model.Managers model= bll.GetModel(id);
+            XSpace.Net.Business.Users bll = new Business.Users();
+            Model.Users model= bll.GetModel(id);
             txtName.Text = model.user_name;
             //txtPassword.Text = model.password;
             //txtConPassword.Text = model.password;
             txtEmail.Text = model.email;
-            chkLock.Checked = model.is_lock == 0 ? false : true;
+            chkLock.Checked = model.status == 0 ? false : true;
+            txtPhone.Text = model.mobile;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            XSpace.Net.Business.Managers bll = new Business.Managers();
+            XSpace.Net.Business.Users bll = new Business.Users();
             string name = txtName.Text.Trim();
-            XSpace.Net.Model.Managers model = new Model.Managers();
-            model.id = Convert.ToInt32(Request["id"]);
+            Model.Users model = bll.GetModel( Convert.ToInt32(Request["id"]));
+          
             model.user_name = name;
             if (txtPassword.Text != "")
             {
@@ -52,7 +53,9 @@ namespace XSpace.Net.Web.Manager.Users
             }
             model.email = txtEmail.Text;
             int islock = chkLock.Checked ? 1 : 0;
-            model.is_lock = islock;
+            model.status = islock;
+            model.mobile = txtPhone.Text;
+
             if (!string.IsNullOrEmpty(name))
             {
                 if (!bll.Exists(name,Convert.ToInt32(Request["id"])))
@@ -63,12 +66,12 @@ namespace XSpace.Net.Web.Manager.Users
                 }
                 else
                 {
-                    lblHint.Text = "该管理员[" + name + "]已存在，请更换.";
+                    lblHint.Text = "该用户[" + name + "]已存在，请更换.";
                 }
             }
             else
             {
-                lblHint.Text = "管理员不能为空，请检查.";
+                lblHint.Text = "用户名不能为空，请检查.";
             }
         }
     }
