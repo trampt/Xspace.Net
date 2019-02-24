@@ -34,7 +34,10 @@ namespace XSpace.Net.Web.Manager.Channels
                 {
                     InitBind();
                 }
-                else { }
+                else { 
+                
+                
+                }
             }
         }
 

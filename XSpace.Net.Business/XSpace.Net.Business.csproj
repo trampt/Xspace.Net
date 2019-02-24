@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SiteConfig.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="Channels.cs" />
