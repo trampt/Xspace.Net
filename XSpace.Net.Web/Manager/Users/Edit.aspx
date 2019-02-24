@@ -29,7 +29,7 @@
        <form runat="server" id="form1">
  
 
-           <uc1:header runat="server" ID="header" />
+           <uc1:header runat="server" ID="header"  CurModule="Users" />
 
     
 
@@ -37,7 +37,7 @@
     <div class="container">
         <div class="panel panel-success">
             <div class="panel-heading">
-                添加资讯分类
+              编辑用户
             </div>
             
                 <div class="panel-body">

@@ -10,6 +10,6 @@
 namespace XSpace.Net.Web {
     
     
-    public partial class Index {
+    public partial class Index1 {
     }
 }

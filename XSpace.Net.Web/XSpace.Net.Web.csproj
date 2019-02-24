@@ -122,6 +122,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contents\umeditor\net\Uploader.cs" />
+    <Compile Include="files.aspx.cs">
+      <DependentUpon>files.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="files.aspx.designer.cs">
+      <DependentUpon>files.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,6 +219,13 @@
     </Compile>
     <Compile Include="Manager\Resources\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Settings\Quit.aspx.cs">
+      <DependentUpon>Quit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Settings\Quit.aspx.designer.cs">
+      <DependentUpon>Quit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\Settings\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -308,6 +322,7 @@
     <Content Include="Contents\bootstrap\js\bootstrap.js" />
     <Content Include="Contents\bootstrap\js\bootstrap.min.js" />
     <Content Include="Contents\bootstrap\js\npm.js" />
+    <Content Include="Contents\Css\Index.css" />
     <Content Include="Contents\Css\ManagerIndex.css" />
     <Content Include="Contents\Css\ManagerLogin.css" />
     <Content Include="Contents\fontawesome\css\bootstrap-theme.css" />
@@ -489,6 +504,9 @@
     <Content Include="Contents\umeditor\umeditor.config.js" />
     <Content Include="Contents\umeditor\umeditor.js" />
     <Content Include="Contents\umeditor\umeditor.min.js" />
+    <Content Include="files.aspx" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\movie.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Manager\Channels\Edit.aspx" />
     <Content Include="Manager\Channels\Add.aspx" />
@@ -502,6 +520,7 @@
     <Content Include="Manager\Resources\Add.aspx" />
     <Content Include="Manager\Resources\Edit.aspx" />
     <Content Include="Manager\Resources\List.aspx" />
+    <Content Include="Manager\Settings\Quit.aspx" />
     <Content Include="Manager\Settings\Edit.aspx" />
     <Content Include="Manager\Users\Add.aspx" />
     <Content Include="Manager\Users\Edit.aspx" />
@@ -509,6 +528,8 @@
     <Content Include="Scripts\ajaxuploadfile.js" />
     <Content Include="Scripts\CJL.0.1.min.js" />
     <Content Include="Scripts\ImagePreview.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="packages.config" />

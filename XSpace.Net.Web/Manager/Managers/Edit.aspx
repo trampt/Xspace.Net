@@ -30,14 +30,14 @@
  
 
   
-           <uc1:header runat="server" ID="header" />
+           <uc1:header runat="server" ID="header"  CurModule="System"/>
     
 
 <div class="main" style="border-bottom:0">
     <div class="container">
         <div class="panel panel-success">
             <div class="panel-heading">
-                添加资讯分类
+                编辑系统管理员
             </div>
             
                 <div class="panel-body">

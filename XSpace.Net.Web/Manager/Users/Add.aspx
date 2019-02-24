@@ -29,7 +29,7 @@
        <form runat="server" id="form1">
  
   
-           <uc1:header runat="server" ID="header" />
+           <uc1:header runat="server" ID="header" CurModule="Users"/>
     
 
 <div class="main" style="border-bottom:0">

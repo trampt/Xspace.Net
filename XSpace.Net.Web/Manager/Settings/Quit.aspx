@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="XSpace.Net.Web.Manager.Settings.Edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Quit.aspx.cs" Inherits="XSpace.Net.Web.Manager.Settings.Quit" %>
 
 <%@ Register Src="~/Manager/header.ascx" TagPrefix="uc1" TagName="header" %>
 

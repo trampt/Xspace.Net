@@ -25,14 +25,14 @@
      
        
 
-
+    
     
 
     <form id="form1" runat="server">
      
        
 
-        <uc1:header ID="header1" runat="server" />
+        <uc1:header ID="header1" runat="server"  CurModule="Control"/>
     
 
 <div class="main" style="border-bottom:0">

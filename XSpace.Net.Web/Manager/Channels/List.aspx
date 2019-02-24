@@ -30,7 +30,7 @@
  
 
   
-         <uc1:header runat="server" ID="header" />
+         <uc1:header runat="server" ID="header" CurModule="Resources"/>
     
 
 <div class="main" style="border-bottom:0">
